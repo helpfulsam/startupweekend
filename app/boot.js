@@ -4,6 +4,7 @@ import { Kernel } from '@stephenbunch/di';
 import requireDirectory from 'require-directory';
 import pmongo from 'promised-mongo';
 import path from 'path';
+import bodyParser from 'body-parser';
 
 var args = yargs.argv;
 var pkg = require( APP_ROOT + '/package' );
@@ -17,6 +18,7 @@ var kernel = new Kernel();
 
 var app = express();
 app.use( require( 'compression' )({ threshold: 512 }) );
+app.use(bodyParser.json());
 
 kernel.register( 'Router', express.Router );
 
