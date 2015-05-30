@@ -1,0 +1,21 @@
+{
+  "name": "startupweekend",
+  "version": "0.0.0",
+  "homepage": "https://github.com/helpfulsam/startupweekend",
+  "authors": [
+    "Sam"
+  ],
+  "license": "No License",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "fetch": "~0.9.0",
+    "media-match": "~2.0.2",
+    "angular-animate": "~1.4.0"
+  }
+}

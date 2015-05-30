@@ -1,0 +1,39 @@
+{
+  "name": "startupweekend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/helpfulsam/startupweekend"
+  },
+  "author": "Sam",
+  "license": "No License",
+  "bugs": {
+    "url": "https://github.com/helpfulsam/startupweekend/issues"
+  },
+  "homepage": "https://github.com/helpfulsam/startupweekend",
+  "devDependencies": {
+    "@stephenbunch/buildpack": "^0.1.5",
+    "gulp": "^3.8.11"
+  },
+  "dependencies": {
+    "@stephenbunch/di": "^0.1.1",
+    "@stephenbunch/event": "^0.1.2",
+    "@stephenbunch/path": "^0.1.0",
+    "URIjs": "^1.15.1",
+    "babel": "^5.4.7",
+    "bluebird": "^2.9.26",
+    "compression": "^1.4.4",
+    "dotenv": "^1.1.0",
+    "express": "^4.12.4",
+    "lodash": "^3.9.3",
+    "moment": "^2.10.3",
+    "moment-timezone": "^0.3.1",
+    "path-to-regexp": "^1.2.0",
+    "yargs": "^3.10.0"
+  }
+}
