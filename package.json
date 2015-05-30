@@ -24,6 +24,7 @@
     "URIjs": "^1.15.1",
     "babel": "^5.4.7",
     "bluebird": "^2.9.26",
+    "bower": "^1.4.1",
     "compression": "^1.4.4",
     "dotenv": "^1.1.0",
     "express": "^4.12.4",
