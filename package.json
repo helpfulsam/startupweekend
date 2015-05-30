@@ -33,6 +33,7 @@
     "moment": "^2.10.3",
     "moment-timezone": "^0.3.1",
     "path-to-regexp": "^1.2.0",
+    "require-directory": "^2.1.1",
     "yargs": "^3.10.0"
   },
   "engines": {
