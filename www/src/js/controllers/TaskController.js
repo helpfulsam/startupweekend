@@ -3,7 +3,6 @@ export default [ '$scope', '$fetch',function( $scope, $fetch ) {
   	return res.json();
   }).then(function(tasks){
   	$scope.tasks = tasks;
-  	console.log($scope.tasks);
-  	$scope.apply();
+    $scope.$evalAsync();
   });
 }];

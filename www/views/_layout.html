@@ -1,8 +1,17 @@
-<route path="/" view="views/home.html"></route>
-<route path="/tasks" view="views/tasks.html"></route>
+<div class="layout">
+  <header class="layout__header">
+    <nav>
+      <a href="/">
+        <img class="logo" src="http://cdn-production.codecademy.com/assets/logo/logo--dark-blue-bf11002ce1caecdfb9fec8d3286b8a8d.svg" />
+      </a>
+    </nav>
+  </header>
 
-<!-- In order for this route to work, we need to add a route in run/routes -->
-<route path="/some-page">
-  <h1>:)</h1>
-  <a href="/">Go back</a>
-</route>
+  <div class="layout__content">
+    <route path="/" view="views/dashboard.html"></route>
+  </div>
+
+  <footer class="layout__footer">
+
+  </footer>
+</div>

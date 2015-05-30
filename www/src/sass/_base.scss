@@ -1,3 +1,5 @@
+@import 'colors';
+
 * {
   box-sizing: border-box;
   line-height: 1em;
@@ -7,6 +9,57 @@ html, body {
   padding: 0;
   margin: 0;
   font-size: 16px;
-  font-family: RobotoDraft, Roboto, sans-serif;
-  -webkit-font-smoothing: antialised;
+  font-family: 'Oxygen', sans-serif;
+  font-weight: 300;
+}
+
+.layout {
+  min-height: 100vh;
+  color: $color-foreground;
+  display: flex;
+  flex-direction: column;
+}
+
+.layout__header {
+  height: 58px;
+  flex-shrink: 0;
+}
+
+.layout__content {
+  background-color: $color-background;
+  flex-grow: 1;
+  padding: 16px;
+}
+
+.layout__footer {
+  background-color: $color-background-footer;
+  // height: 340px;
+  flex-shrink: 0;
+}
+
+[horizontal] {
+  display: flex;
+}
+
+.card {
+  margin: 1%;
+  width: 31.33333%;
+  height: 368px;
+  background: #fff;
+  color: #204056;
+  text-align: center;
+}
+
+.card__title {
+  font-size: 26px;
+}
+
+.card__content {
+  padding: 16px;
+}
+
+.card:hover {
+  background-color: #39d1b4;
+  cursor: pointer;
+  color: #fff;
 }
