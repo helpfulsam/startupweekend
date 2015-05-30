@@ -6,7 +6,7 @@ var pkg = require( APP_ROOT + '/package' );
 require( 'dotenv' ).load();
 
 var config = {
-  port: args.port || parseInt( process.env.APP_PORT || 0, 10 ) || 8000
+  port: args.port || parseInt( process.env.PORT || 0, 10 ) || 8000
 };
 
 var app = express();

@@ -3,3 +3,4 @@ bower_components/
 www/js
 www/css
 www/lib
+.env
