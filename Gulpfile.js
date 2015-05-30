@@ -1,6 +1,6 @@
 require( 'dotenv' ).load();
 var args = require( 'yargs' )
-  .default( 'port', process.env.APP_PORT )
+  .default( 'port', process.env.PORT )
   .default( 'debug', 5858 )
   .argv;
 
