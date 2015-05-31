@@ -10,7 +10,7 @@ export default [ 'Router', 'db', function( Router, db ) {
       return;
     }
 
-    var tasks = await db.collection( 'categories' ).find({"lang": req.query.lang }).toArray();
+    var tasks = await db.collection( 'categories' ).find({"lang": req.query.lang }).sort({ _id: 1 }).toArray();
     res.json( tasks );
   });
 

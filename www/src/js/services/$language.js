@@ -1,7 +1,7 @@
 export default ['$rootScope',
 function($rootScope) {
   return { 
-    language: "es",
+    language: "en",
     languages: [{name:"en",image:"img/United-Kingdom.png" },{name:"es", image:"img/Spain.png"}],
     getLanguage: function(){
       return this.language;

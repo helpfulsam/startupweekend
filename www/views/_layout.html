@@ -4,9 +4,12 @@
       <a href="/">
         <img class="logo" src="img/settled.png" />
       </a>
-    <div class="flag" ng-click="selectLanguage(language.name)" ng-repeat="language in languages">
-      <img class="flag__img" src="{{language.image}}">
-    </div>
+      <div class="flagContainer">
+        <div class="flag" ng-click="selectLanguage(language.name)" ng-repeat="language in languages">
+          <img class="flag__img" src="{{language.image}}">
+        </div>
+        <div class="flagContainer"><button class="step-slider__button step-slider__prev">Login</button></div>
+      </div>
     </nav>
   </header>
 
