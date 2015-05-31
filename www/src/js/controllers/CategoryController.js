@@ -1,5 +1,6 @@
 export default [ '$scope', '$fetch','$router','$immediate', function( $scope, $fetch, $router, $immediate ) {
   $immediate(function(){
+  $scope.Math = window.Math;
   $fetch("/api/category/" + $scope.route.params.id).then(function(res){
   	return res.json();
   }).then(function(category){
