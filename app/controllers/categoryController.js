@@ -4,12 +4,18 @@ export default [ 'Router', 'db', function( Router, db ) {
   controller.path = '/api/category';
 
   controller.get( '/', async function( req, res ) {
-    var tasks = await db.collection( 'categories' ).find().toArray();
+    if(req.query.categoryId && req.query.lang){
+      var task = await db.collection( 'categories' ).findOne({ categoryId: Number(req.query.categoryId), lang: req.query.lang });
+      res.json(task);
+      return;
+    }
+
+    var tasks = await db.collection( 'categories' ).find({"lang": req.query.lang }).toArray();
     res.json( tasks );
   });
 
   controller.get( '/:id', async function( req, res ) {
-    var task = await db.collection( 'categories' ).findOne({ _id: ObjectId(req.params.id) });
+    var task = await db.collection( 'categories' ).findOne({ _id: ObjectId(req.params.id)});
     res.json( task );
   });
 

@@ -1,9 +1,12 @@
 <div class="layout">
   <header class="layout__header">
-    <nav class="layout__nav">
+    <nav ng-controller="LanguageController" class="layout__nav">
       <a href="/">
         <img class="logo" src="http://cdn-production.codecademy.com/assets/logo/logo--dark-blue-bf11002ce1caecdfb9fec8d3286b8a8d.svg" />
       </a>
+    <div class="flag" ng-click="selectLanguage(language.name)" ng-repeat="language in languages">
+      <img class="flag__img" src="{{language.image}}">
+    </div>
     </nav>
   </header>
 

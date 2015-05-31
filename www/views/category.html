@@ -1,30 +1,18 @@
 <div class="task-list" ng-controller="CategoryController">
   <route name="route" path="/category/:id"></route>
-  <div class="task-card action-card">
+  <div ng-class="{ 'task-card--completed': (task.progress.currentStep/task.progress.numSteps) >= 1 }" ng-repeat="task in category.tasks" class="task-card action-card">
     <div class="task-card__progress">
-      <div class="task-card__progress__value">0%</div>
+      <div class="task-card__progress__value">
+        <i ng-if="task.progress.currentStep === task.progress.numSteps" class="fa fa-check"></i>
+        <span ng-if="task.progress.currentStep !== task.progress.numSteps">
+          {{Math.round((task.progress.currentStep/task.progress.numSteps) * 100)}}%
+        </span>
+      </div>
     </div>
     <div class="task-card__content">
-      <h5 class="task-card__title">title</h5>
-      <div class="task-card__description">description</div>
+      <h5 class="task-card__title">{{task.title}}</h5>
+      <div class="task-card__description">{{task.description}}</div>
+      <div class="category-card__content__date ">{{task.dueDate}}</div>
     </div>
   </div>
-  <div class="task-card action-card task-card--completed">
-    <div class="task-card__progress">
-      <div class="task-card__progress__value"><i class="fa fa-check"></i></div>
-    </div>
-    <div class="task-card__content">
-      <h5 class="task-card__title">title</h5>
-      <div class="task-card__description">description</div>
-    </div>
-  </div>
-  <div class="task-card action-card">
-    <div class="task-card__progress">
-      <div class="task-card__progress__value">50%</div>
-    </div>
-    <div class="task-card__content">
-      <h5 class="task-card__title">title</h5>
-      <div class="task-card__description">description</div>
-    </div>
-  <div>
 </div>

@@ -1,17 +1,23 @@
-export default [ '$scope', '$fetch','$router',function( $scope, $fetch, $router ) {
-  $fetch("/api/category/").then(function(res){
-  	return res.json();
-  }).then(function(categories){
-  	$scope.categories = categories;
-  	console.log($scope);
-  	$scope.$evalAsync();
+export default [ '$scope', '$fetch','$router','$language','$rootScope',function( $scope, $fetch, $router, $language, $rootScope) {
+
+
+  $rootScope.$on("languageChange", function(){
+    getData();
   });
 
-  //$fetch("api/tasks/", { method: "PUT", body: JSON.stringify(task), headers: { "Content-Type": "application/json" } }).then(function(){
-  //});
+   var getData = function() {
+    $fetch("/api/category?lang=" + $language.getLanguage()).then(function(res){
+  	 return res.json();
+    }).then(function(categories){
+  	 $scope.categories = categories;
+  	 $scope.$evalAsync();
+    });
+  }
+
+  getData();
   
   $scope.goToCategory = function(id){
   	$router.go("/category/" + id);
-  }
+  };
 
 }];
