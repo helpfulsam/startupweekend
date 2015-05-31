@@ -1,6 +1,6 @@
 <div class="layout">
   <header class="layout__header">
-    <nav>
+    <nav class="layout__nav">
       <a href="/">
         <img class="logo" src="http://cdn-production.codecademy.com/assets/logo/logo--dark-blue-bf11002ce1caecdfb9fec8d3286b8a8d.svg" />
       </a>
@@ -9,6 +9,7 @@
 
   <div class="layout__content">
     <route path="/" view="views/dashboard.html"></route>
+    <route path="/category/:id" view="views/category.html"></route>
   </div>
 
   <footer class="layout__footer">

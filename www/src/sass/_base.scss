@@ -13,6 +13,12 @@ html, body {
   font-weight: 300;
 }
 
+.logo {
+  height: 30px;
+  padding-left: 16px;
+  margin: 14px 0;
+}
+
 .layout {
   min-height: 100vh;
   color: $color-foreground;
@@ -23,6 +29,11 @@ html, body {
 .layout__header {
   height: 58px;
   flex-shrink: 0;
+}
+
+.layout__nav {
+  width: 960px;
+  margin: 0 auto;
 }
 
 .layout__content {
@@ -41,25 +52,90 @@ html, body {
   display: flex;
 }
 
-.card {
+[vertical] {
+  display: flex;
+  flex-direction: column;
+}
+
+.action-card {
+  background: #fff;
+}
+
+.action-card:hover {
+  background-color: #39d1b4;
+  cursor: pointer;
+  color: #fff;
+}
+
+.category-card {
   margin: 1%;
   width: 31.33333%;
   height: 368px;
   background: #fff;
   color: #204056;
   text-align: center;
+  color: #204056;
 }
 
-.card__title {
+.category-card__title {
   font-size: 26px;
 }
 
-.card__content {
+.category-card__content {
   padding: 16px;
 }
 
-.card:hover {
-  background-color: #39d1b4;
-  cursor: pointer;
-  color: #fff;
+.task-list {
+  padding: 0 127px;
+}
+
+.task-card {
+  height: 127px;
+  margin: 44px 0;
+  display: flex;
+  align-items: center;
+}
+
+.task-card__progress {
+  min-width: 5rem;
+  width: 20%;
+  text-align: center;
+}
+
+.task-card__progress__value {
+  display: inline-block;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  background-color: #f1f2f2;
+  color: #4a4a4c;
+  font-weight: 700;
+  text-align: center;
+  line-height: 3rem;
+}
+
+.task-card__content {
+  padding: 16px 80px 16px 0;
+  position: relative;
+  flex-grow: 1;
+}
+
+.task-card__content::after {
+  position: absolute;
+  display: block;
+  right: 1rem;
+  top: 50%;
+  font-family: 'new-cc-icon';
+  content: '\e629';
+  color: #f1f2f2;
+  transform: translateY(-50%);
+  font-size: 3rem;
+}
+
+.task-card__title {
+  font-size: 18px;
+  color: #204056;
+  font-weight: 300;
+  margin: 0;
+  line-height: 24px;
 }
