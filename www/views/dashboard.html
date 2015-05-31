@@ -1,8 +1,9 @@
 <div ng-controller="DashboardController" horizontal>
   <div ng-click="goToCategory(category._id)" class="category-card action-card" ng-repeat="category in categories">
     <img class="category-card__pic" ng-src="{{category.imageUrl}}" alt="Description" />
-    <h3 class="category-card__title">{{category.name}}</h3>
-    <div class="category-card__content">{{category.description}}</div>
-    <div class="category-card__content__date">{{category.dueDate}}</div>
+    <div class="category-card__content">
+      <h3 class="category-card__title">{{category.name}}</h3>
+      <div>{{category.description}}</div>
+    </div>
   </div>
 </div>
