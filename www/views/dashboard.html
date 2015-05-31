@@ -1,14 +1,8 @@
-<div horizontal>
-  <div class="card">
-    <h3 class="card__title">title</h3>
-    <div class="card__content">content</div>
-  </div>
-  <div class="card">
-    <h3 class="card__title">title</h3>
-    <div class="card__content">content</div>
-  </div>
-  <div class="card">
-    <h3 class="card__title">title</h3>
-    <div class="card__content">content</div>
+<div ng-controller="DashboardController" horizontal>
+  <div ng-click="goToCategory(category._id)" class="card" ng-repeat="category in categories">
+    <img class="card__pic" ng-src="{{category.imageUrl}}" alt="Description" /> 
+    <h3 class="card__title">{{category.name}}</h3>
+    <div class="card__content">{{category.description}}</div>
+    <div class="card__content__date">{{category.dueDate}}</div>
   </div>
 </div>

@@ -41,6 +41,18 @@ html, body {
   display: flex;
 }
 
+.card__pic {
+  margin-top: 20%;
+  width: 50%;
+  height: 35%;
+  border-radius: 50%;
+}
+
+.card__content__date {
+  font-size: 13px;
+  margin-top: 20px; 
+}
+
 .card {
   margin: 1%;
   width: 31.33333%;
