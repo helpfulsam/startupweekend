@@ -1,4 +1,5 @@
 <div ng-controller="DashboardController" horizontal>
+
   <div ng-click="goToCategory(category._id)" class="category-card action-card" ng-repeat="category in categories">
     <img class="category-card__pic" ng-src="{{category.imageUrl}}" alt="Description" />
     <div class="category-card__content">
