@@ -1,4 +1,4 @@
-<div class="task-list" vertical ng-controller="CategoryController">
+<div class="task-list" ng-controller="CategoryController">
   <route name="route" path="/category/:id"></route>
   <div class="task-card action-card">
     <div class="task-card__progress">
@@ -10,14 +10,18 @@
     </div>
   </div>
   <div class="task-card action-card task-card--completed">
-    <div class="task-card__progress">100%</div>
+    <div class="task-card__progress">
+      <div class="task-card__progress__value"><i class="fa fa-check"></i></div>
+    </div>
     <div class="task-card__content">
       <h5 class="task-card__title">title</h5>
       <div class="task-card__description">description</div>
     </div>
   </div>
   <div class="task-card action-card">
-    <div class="task-card__progress">50%</div>
+    <div class="task-card__progress">
+      <div class="task-card__progress__value">50%</div>
+    </div>
     <div class="task-card__content">
       <h5 class="task-card__title">title</h5>
       <div class="task-card__description">description</div>

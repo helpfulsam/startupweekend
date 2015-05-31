@@ -1,0 +1,23 @@
+<div class="step-slider" ng-controller="TaskController">
+  <div class="step-slider__progress-bar">
+    <div ng-repeat="step in task.steps"
+         class="step-slider__progress-dot"
+         ng-class="{
+           'step-slider__progress-dot--current': step.number === task.progress.currentStep,
+           'step-slider__progress-dot--completed': step.number < task.progress.currentStep
+         }"></div>
+  </div>
+  <div class="step-slider__container">
+    <div ng-repeat="step in task.steps"
+         class="step-slider__slide"
+         ng-bind-html="step.description"
+         ng-show="step.number === task.progress.currentStep">
+    </div>
+  </div>
+  <div>
+    <button class="step-slider__button step-slider__prev" ng-click="previousStep()">Back</button>
+    <button class="step-slider__button step-slider__next" ng-click="nextStep()">
+      <span><i class="fa fa-check"></i><br>Done</span>
+    </button>
+  </div>
+</div>
