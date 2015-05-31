@@ -1,23 +1,25 @@
 <div class="step-slider" ng-controller="TaskController">
+  <route name="route" path="/task/:id"></route>
+  <span ng-click="goBack()" class="fa fa-chevron-left taskBack"></span>
   <div class="step-slider__progress-bar">
-    <div ng-repeat="step in task.steps"
+    <div ng-repeat="step in category.tasks[taskIndex].steps"
          class="step-slider__progress-dot"
          ng-class="{
-           'step-slider__progress-dot--current': step.number === task.progress.currentStep,
-           'step-slider__progress-dot--completed': step.number < task.progress.currentStep
+           'step-slider__progress-dot--current': step.number === category.tasks[taskIndex].progress.currentStep,
+           'step-slider__progress-dot--completed': step.number < category.tasks[taskIndex].progress.currentStep
          }"></div>
   </div>
   <div class="step-slider__container">
-    <div ng-repeat="step in task.steps"
+    <div ng-repeat="step in category.tasks[taskIndex].steps"
          class="step-slider__slide"
          ng-bind-html="step.description"
-         ng-show="step.number === task.progress.currentStep">
+         ng-show="step.number === category.tasks[taskIndex].progress.currentStep">
     </div>
   </div>
   <div>
     <button class="step-slider__button step-slider__prev" ng-click="previousStep()">Back</button>
     <button class="step-slider__button step-slider__next" ng-click="nextStep()">
-      <span><i class="fa fa-check"></i><br>Done</span>
+      <span><i class="fa fa-check" ></i><br>{{ category.tasks[taskIndex].progress.currentStep === category.tasks[taskIndex].progress.numSteps ? 'Finish' : 'Done' }}</span>
     </button>
   </div>
 </div>

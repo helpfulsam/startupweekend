@@ -31,9 +31,24 @@ export default [ 'Router', 'db', function( Router, db ) {
     res.json( task );
   });
 
-  controller.put( '/:id', async function( req, res ) {
-    var task = await db.collection( 'categories' ).update({ _id: ObjectId(req.params.id) }, req.body);
-    res.json( task );
+  controller.put( '/', async function( req, res ) {
+
+    var task = req.body;
+    for(var i = 0; i < task.steps.length; i++){
+      delete task.steps[i].$$hashKey;
+    }
+    //var categories = await db.collection( 'categories' ).find({ categoryId: req.query.categoryId}).toArray();
+
+    var categories = await db.collection('categories').update({categoryId:Number(req.query.categoryId), 'tasks.id': Number(req.query.taskIndex)  }, {"$set": {'tasks.$.progress.currentStep': task.progress.currentStep}}, { "multi": true});
+
+    //for(var i = 0; i < categories.length; i++){
+    //  categories[i].tasks[req.query.taskIndex] = task;
+    //  console.log(categories[i]);
+    //  await db.collection( 'categories').update({ _id: ObjectId(categories[i]._id)}, categories[i]);
+
+    //}
+
+    res.json( categories );
   });
 
   controller.delete( '/:id', async function( req, res ) {

@@ -1,11 +1,11 @@
 <div class="task-list" ng-controller="CategoryController">
   <route name="route" path="/category/:id"></route>
-  <div ng-class="{ 'task-card--completed': (task.progress.currentStep/task.progress.numSteps) >= 1 }" ng-repeat="task in category.tasks" class="task-card action-card">
+  <div ng-click="goToTask(category.tasks.indexOf(task))" ng-class="{ 'task-card--completed': (task.progress.currentStep/task.progress.numSteps) >= 1 }" ng-repeat="task in category.tasks" class="task-card action-card">
     <div class="task-card__progress">
       <div class="task-card__progress__value">
-        <i ng-if="task.progress.currentStep === task.progress.numSteps" class="fa fa-check"></i>
-        <span ng-if="task.progress.currentStep !== task.progress.numSteps">
-          {{Math.round((task.progress.currentStep/task.progress.numSteps) * 100)}}%
+        <i ng-if="task.progress.currentStep > task.progress.numSteps" class="fa fa-check"></i>
+        <span ng-if="task.progress.currentStep <= task.progress.numSteps">
+          {{Math.round((task.progress.currentStep -1 )/task.progress.numSteps * 100)}}%
         </span>
       </div>
     </div>
