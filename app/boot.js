@@ -23,10 +23,11 @@ app.use(bodyParser.json());
 kernel.register( 'Router', express.Router );
 
 if ( process.env.DB_HOST ) {
-  var db = pmongo(
+  var connString =
+    'mongodb://' +
     ( process.env.DB_USER ? process.env.DB_USER + ':' + process.env.DB_PASS + '@' : '' ) +
-    'mongodb://' + process.env.DB_HOST + ':' + process.env.DB_PORT + '/' + process.env.DB_NAME
-  );
+    process.env.DB_HOST + ':' + process.env.DB_PORT + '/' + process.env.DB_NAME;
+  var db = pmongo( connString );
   kernel.register( 'db', db );
 } else {
   kernel.register( 'db', null );

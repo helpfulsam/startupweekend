@@ -9,7 +9,6 @@ export default [ 'Router', 'db', function( Router, db ) {
   });
 
   controller.get( '/:id', async function( req, res ) {
-  	console.log(req.params.id);
     var task = await db.collection( 'categories' ).findOne({ _id: ObjectId(req.params.id) });
     res.json( task );
   });
@@ -19,10 +18,9 @@ export default [ 'Router', 'db', function( Router, db ) {
     var task = await db.collection( 'categories' ).findOne({ accountId: ObjectId(req.query.accountId) });
     res.json( task );
   });
- 
+
 
   controller.post( '/', async function( req, res ) {
-  	console.log(req.body.accountId);
     var task = await db.collection( 'categories' ).insert(req.body);
     res.json( task );
   });
