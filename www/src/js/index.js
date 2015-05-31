@@ -8,7 +8,7 @@ import event from '@stephenbunch/event';
 import pathToRegexp from 'path-to-regexp';
 import moment from 'moment';
 
-var app = angular.module( 'helpfulsam', [ 'ngAnimate' ] );
+var app = angular.module( 'helpfulsam' );
 
 app.constant( 'matchMedia', matchMedia );
 app.constant( 'fetch', fetch );
