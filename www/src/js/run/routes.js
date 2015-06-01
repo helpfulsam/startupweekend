@@ -5,8 +5,7 @@ export default [ '$router', function( $router ) {
 
   $router.on404 += goHome;
 
-  $router.add( '/dashboard' );
+  $router.add( '/' );
   $router.add( '/category/:id' );
   $router.add( '/task/:id' );
-  $router.add( '/' );
 }];
