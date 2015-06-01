@@ -8,4 +8,5 @@ export default [ '$router', function( $router ) {
   $router.add( '/dashboard' );
   $router.add( '/category/:id' );
   $router.add( '/task/:id' );
+  $router.add( '/' );
 }];
